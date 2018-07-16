@@ -23,7 +23,7 @@ class Song < ActiveRecord::Base
     notes.each do |note|
       if !note.empty?
         note=Note.find_or_create_by(content:note)
-        self.notes<<note
+        self.notes<<note  #we have to do this here because we're making a custom setter?
         note.song_id=self.id
       end
     end
