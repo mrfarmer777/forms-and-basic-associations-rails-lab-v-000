@@ -10,9 +10,5 @@
   <%= f.label :genre_id %>
   <%= f.select(:genre_id, Genre.all.collect {|g| [g.name, g.id]}) %>
   <%= f.label :notes%>
-  <%= f.text_field :song_notes_1 %>
-  <%= f.text_field :song_notes_2 %>
-  <%= f.text_field :song_notes_3 %>
-
   <%= f.submit %>
 <% end %>
