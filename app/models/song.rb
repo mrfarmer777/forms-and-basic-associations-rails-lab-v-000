@@ -26,4 +26,8 @@ class Song < ActiveRecord::Base
       note.song_id=self.id
     end
   end
+
+  def note_contents
+    self.notes.collect {|note| note.content}
+  end
 end
