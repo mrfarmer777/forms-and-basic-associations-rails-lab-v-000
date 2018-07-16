@@ -19,9 +19,9 @@ class Song < ActiveRecord::Base
     self.genre ? self.genre.id : nil
   end
 
-  def notes=(note_strings)
-    note_strings.each do |note_string|
-      self.notes.build(note_string)
+  def notes=(notes)
+    notes.each do |note|
+      self.notes.build(note)
     end
   end
 end
