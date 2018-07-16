@@ -23,6 +23,7 @@ class Song < ActiveRecord::Base
     notes.each do |note|
       if !note.empty?
         note=Note.find_or_create_by(content:note)
+        self.notes<<note
         note.song_id=self.id
       end
     end
