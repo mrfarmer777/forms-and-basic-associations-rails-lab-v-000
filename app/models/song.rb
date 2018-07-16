@@ -21,7 +21,7 @@ class Song < ActiveRecord::Base
 
   def notes=(note_strings)
     note_strings.each do |note_string|
-      self.build.note(note_string)
+      self.notes.build(note_string)
     end
   end
 end
