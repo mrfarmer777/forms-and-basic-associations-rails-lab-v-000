@@ -33,6 +33,11 @@ class Song < ActiveRecord::Base
     self.notes.collect {|note| note.content}
   end
 
+  def genre_name=(name)
+    gen=Genre.find_or_create_by(name:name)
+    self.genre=gen
+  end
+
   def genre_name
     self.genre.name
   end
