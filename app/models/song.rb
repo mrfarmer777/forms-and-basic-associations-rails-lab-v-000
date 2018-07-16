@@ -18,4 +18,10 @@ class Song < ActiveRecord::Base
   def genre_id
     self.genre ? self.genre.id : nil
   end
+
+  def notes=(note_strings)
+    note_strings.each do |note_string|
+      self.build.note(note_string)
+    end
+  end
 end
