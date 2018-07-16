@@ -24,7 +24,6 @@ class Song < ActiveRecord::Base
       note=Song.find_or_create_by(name:note)
       self.notes<<note
       note.song_id=self.id
-      
     end
   end
 end
