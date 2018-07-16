@@ -21,7 +21,10 @@ class Song < ActiveRecord::Base
 
   def notes=(notes)
     notes.each do |note|
-      self.notes.build(note)
+      note=Song.find_or_create_by(name:note)
+      self.notes<<note
+      note.song_id=self.id
+      
     end
   end
 end
