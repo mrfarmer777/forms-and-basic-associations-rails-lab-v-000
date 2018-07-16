@@ -10,7 +10,7 @@
   <%= f.label :genre_id %>
   <%= f.select(:genre_id, Genre.all.collect {|g| [g.name, g.id]}) %>
   <%= f.label :notes%>
-  <%= f.text_field
+  <%= f.text_field %>
 
   <%= f.submit %>
 <% end %>
