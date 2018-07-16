@@ -32,7 +32,7 @@ class Song < ActiveRecord::Base
   def note_contents=(notes_array)
     notes_array.each do |note|
       n=Note.find_or_create_by(content:note)
-      
+
 
   def note_contents
     self.notes.collect {|note| note.content}
